@@ -1,6 +1,7 @@
 class CreateMenuItems < ActiveRecord::Migration[8.1]
   def change
     create_table :menu_items do |t|
+      t.references :restaurant, null: false, foreign_key: true
       t.string :name, null: false
       t.text :description, null: true
       t.decimal :price, precision: 10, scale: 2, null: false
