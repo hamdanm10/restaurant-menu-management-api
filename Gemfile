@@ -7,7 +7,7 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-# gem "jbuilder"
+gem "jbuilder"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -51,3 +51,5 @@ end
 
 # Lightweight and fast pagination for API responses
 gem "pagy", "~> 43.4"
+# Provides easy-to-use search and filter functionality for Rails models without extra dependencies.
+gem "ransack"
