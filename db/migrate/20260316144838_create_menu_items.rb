@@ -5,7 +5,7 @@ class CreateMenuItems < ActiveRecord::Migration[8.1]
       t.string :name, null: false
       t.text :description, null: true
       t.decimal :price, precision: 10, scale: 2, null: false
-      t.integer :category, null: true
+      t.integer :category, null: false
       t.boolean :is_available, null: false, default: true
 
       t.timestamps
