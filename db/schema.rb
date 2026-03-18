@@ -15,7 +15,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_16_144838) do
   enable_extension "pg_catalog.plpgsql"
 
   create_table "menu_items", force: :cascade do |t|
-    t.integer "category"
+    t.integer "category", null: false
     t.datetime "created_at", null: false
     t.text "description"
     t.boolean "is_available", default: true, null: false

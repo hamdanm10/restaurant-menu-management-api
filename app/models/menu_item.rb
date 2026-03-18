@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 class MenuItem < ApplicationRecord
-  # ====================
-  # Enums
-  # ====================
   enum :category, {
     appetizer: 0,
     main: 1,
@@ -11,14 +8,8 @@ class MenuItem < ApplicationRecord
     drink: 3
   }
 
-  # ====================
-  # Relations
-  # ====================
   belongs_to :restaurant
 
-  # ====================
-  # Validations
-  # ====================
   validates :name,
             presence: true,
             uniqueness: { scope: :restaurant_id },
@@ -29,6 +20,18 @@ class MenuItem < ApplicationRecord
             numericality: {
               greater_than_or_equal_to: 0
             }
-  validates :is_available,
-            inclusion: { in: [ true, false ] }
+  validates :category,
+            presence: true,
+            inclusion: { in: categories.keys }
+  validates :is_available, inclusion: { in: [ true, false ] }
+
+  def self.ransackable_attributes(auth_object = nil)
+    %w[name description category is_available]
+  end
+
+  ransacker :category, formatter: proc { |value|
+    categories[value] || value
+  } do |parent|
+    parent.table[:category]
+  end
 end
