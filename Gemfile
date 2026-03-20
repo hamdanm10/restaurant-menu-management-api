@@ -47,6 +47,12 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Test data factories for Rails (FactoryBot)
+  gem "factory_bot_rails"
+
+  # Behavior-driven testing framework for Ruby and Rails
+  gem "rspec-rails", "~> 6.0.0"
 end
 
 # Lightweight and fast pagination for API responses
