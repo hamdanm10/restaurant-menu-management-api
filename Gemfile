@@ -52,7 +52,7 @@ group :development, :test do
   gem "factory_bot_rails"
 
   # Behavior-driven testing framework for Ruby and Rails
-  gem "rspec-rails", "~> 6.0.0"
+  gem "rspec-rails", "~> 8.0.4"
 end
 
 # Lightweight and fast pagination for API responses
