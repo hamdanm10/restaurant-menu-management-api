@@ -56,6 +56,6 @@ group :development, :test do
 end
 
 # Lightweight and fast pagination for API responses
-gem "pagy", "~> 43.4"
+gem "pagy", "~> 43.5"
 # Provides easy-to-use search and filter functionality for Rails models without extra dependencies.
 gem "ransack"
